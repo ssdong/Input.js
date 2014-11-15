@@ -1,0 +1,9 @@
+{
+	"name"          : "Input",
+	"version"       : "0.1.0",
+	"main"          :  "Input.js",
+	"description"   : "A Javascript library focused on sequential user input. "  ,
+	"author"        : "Susu Dong",
+	"keywords"      : [ "input", "sequence"],
+	"license"       : "MIT",
+}
