@@ -1,5 +1,5 @@
 (function () {
-	var KEYS = {
+  var KEYS = {
       BACKSPACE : 8, 
       TAB       : 9,
       CLEAR     : 12, // Mac keyboard
@@ -579,7 +579,7 @@
 
             get_activekeys :  function() {
                                  /*
-                                      Object {65: true, 83: true}
+                                      Object {65: 2, 83: 3}
                                  */
                                  return this.active_keys;
                               },
@@ -595,12 +595,12 @@
                                  /*
                                       Object {
                                          65: {
-                                            66: true,
-                                            67: true,
-                                            83: true, 
+                                            66: 1,
+                                            67: 1,
+                                            83: 2, 
                                          }
                                          'start': {
-                                            65: true,
+                                            65: 1,
                                          }
                                       }
                                  */
@@ -612,6 +612,7 @@
                                          current: 123,
                                          id: "21",
                                          pass: 4,
+                                         v: true,
                                       }
 
                                  */
