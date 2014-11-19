@@ -1,4 +1,4 @@
 Input.js
 ========
 
-A JavaScript library focused on user's sequential input
+A JavaScript library focused on sequential user inputs.
