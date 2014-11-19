@@ -2,7 +2,7 @@ Input.js
 ========
 
 A JavaScript library focused on sequential user inputs.
-Please visit http://csclub.uwaterloo.ca/~s2dong/input.html for docs :)
+Please visit http://csclub.uwaterloo.ca/~s2dong/input.html
 
 ** History **
 0.1.1
