@@ -1,8 +1,10 @@
 (function () {
   var KEYS = {
+      DESK_MENU : 0,  // Detected on desktop
       BACKSPACE : 8, 
       TAB       : 9,
       CLEAR     : 12, // Mac keyboard
+      DN_LOCK   : 12,
       ENTER     : 13,
       SHIFT     : 16,
       CTRL      : 17,
@@ -64,23 +66,32 @@
       R_START : 92,
       L_CMD   : 91, // Mac's keyboard
       R_CMD   : 93,
-      MENU_KEY: 93, // Detected on laptop keyboard
+      LAP_MENU: 93, // Detected on laptop keyboard
       N_ZERO  : 96,
-      N_ONE   : 97,
-      N_TWO   : 98,
-      N_THREE : 99,
-      N_FOUR  : 100,
-      N_FIVE  : 101,
-      N_SIX   : 102,
-      N_SEVEN : 103,
-      N_EIGHT : 104,
-      N_NINE  : 105,
+      N_1     : 97,
+      N_2     : 98,
+      N_3     : 99,
+      N_4     : 100,
+      N_5     : 101,
+      N_6     : 102,
+      N_7     : 103,
+      N_8     : 104,
+      N_9     : 105,
       N_MULTI : 106,
       N_PLUS  : 107,
       N_MINUS : 109,
       N_PERIOD: 110,
       N_DEVIDE: 111,
-      N_LOCK  : 144,
+      F1      : 112,
+      F2      : 113,
+      F3      : 114,
+      F4      : 115,
+      F5      : 116,
+      F6      : 117,
+      F7      : 118,
+      F9      : 120,
+      F10     : 121,
+      LN_LOCK  : 144,
 
       SEMICOLON : 186,  // ;
       EQUAL     : 187,  // =
@@ -92,7 +103,7 @@
       L_BRACKET : 219,  // [
       BACKSLASH : 220,  // \
       R_BRACKT  : 221,  // ]
-      S_QUOTE   : 222,  // '
+      S_QUOTE   : 222  // '
 	  };
     
     var State_Machine = {
@@ -499,7 +510,7 @@
                            }
                        }
                        return count;
-                   },
+                   }
     };
 
     //========================================================================================
