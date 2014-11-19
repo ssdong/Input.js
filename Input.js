@@ -439,9 +439,10 @@
                       var first_to_id = _this.first_to_id;
                       var machine = _this.machine;
                       var id_fireup = [];
-                      var entry;
+                      var entry, entry_package;
                       for(var i = 0; i < keyup_buffer.length; i++) {
                           entry = keyup_buffer[i];
+                          entry_package = keys_package[entry.id];
                           // If no longer valid
                           if(!entry.v) {
                              keyup_buffer.splice(i,1);
@@ -449,9 +450,9 @@
                              continue;
                           }
                           // If match
-                          if(this.hasProp(machine[entry.current], keycode)) {
+                          if(this.hasProp(machine[entry.current], keycode) && KEYS[entry_package.key[entry.pass]] == keycode) {
                               // If the last one
-                              if(entry.pass + 1 == keys_package[entry.id].key.length) {
+                              if(entry.pass + 1 == entry_package.key.length) {
                                  id_fireup.push(entry.id);
                                  keyup_buffer.splice(i,1);
                                  i--;     
