@@ -388,6 +388,16 @@
                        }
                     },
 
+      destroy_all:  function(_this) {
+                       _this.active_keys = {};
+                       _this.keys_package = {};
+                       _this.size_table = {};
+                       _this.first_to_id = {};
+                       _this.machine = {};
+                       _this.keydown_buffer = [];
+                       _this.keyup_buffer = [];
+                    },
+
       makeup_keyup_obj: function(current,id, _this) {
                           var obj = {};
                           obj["current"] = current;
@@ -551,6 +561,10 @@
 
             delete_combo:     function(keys) {
                                 Private.destroy_combo(keys, this);
+                              },
+
+            delete_all:       function() {
+                                Private.destroy_all(this);
                               },
 
             user_input:       function(event,key_down) { 
