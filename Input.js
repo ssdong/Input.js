@@ -261,6 +261,10 @@
                        // In Safari, user_agent would be something like
                        // "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25"
                        // We need to check if "Version" exists in the string
+
+                       // In older version of Opera, user_agent would be something like
+                       // "Opera/9.80 (Windows NT 6.1; Win64; x64) Presto/2.12.388 Version/12.17"
+                       // We need to check if "Version" exists in the string
                        if((temp = user_agent.match(/version\/(\d+)/i))!= null) result.splice(1, 1, temp[1]);
                        return result.join(' ');
                     },
