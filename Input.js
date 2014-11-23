@@ -247,8 +247,7 @@
                        }
                        // If user agent is modern version of Opera
 
-                       // userAgent in modern Opera, probably after Opera 18.0(including it)
-                       // userAgent in newer version of Opera would be something like 
+                       // userAgent in newer version of Opera(after 15.0(including it)) would be something like 
                        // "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) 
                        // Chrome/39.0.2171.62 Safari/537.36 OPR/26.0.1656.20 (Edition beta)"
 
