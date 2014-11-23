@@ -490,6 +490,9 @@
                       },
 
       destroy_combo: function(keys, _this) {
+                       if(!this.is_string(keys)) {
+                           throw "function(destroy_combo) expects \"keys\" to be string";
+                       }   
                        var keys_array = this.string_to_array(keys); //["A", "S"]
                        if(this.remove_package(keys_array, _this)) {
                           this.remove_activekeys(keys_array, _this);
