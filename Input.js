@@ -205,17 +205,17 @@
                       var browser = this.get_user_browser();
                       // If the browser is Opera and version is under 12
                       if(browser.indexOf("Opera") != -1 && browser.substring(6, browser.length) < 12) {
-                          this.extend(KEY, OPERA_11);
+                          this.extend(KEYS, OPERA_11);
                           return;
                       }
                       // If the browser is Firefox and version is under 15
                       if(browser.indexOf("Firefox") != -1 && browser.substring(8, browser.length) < 15) {
-                          this.extend(KEY, FIREFOX_14);
+                          this.extend(KEYS, FIREFOX_14);
                           return;
                       }
                       // If the browser is Firefox and version is above 15(including it)
                       if(browser.indexOf("Firefox") != -1 && browser.substring(8, browser.length) >= 15) {
-                          this.extend(KEY, FIREFOX_15);
+                          this.extend(KEYS, FIREFOX_15);
                           return;
                       }
                     },
@@ -643,6 +643,7 @@
            this.keydown_buffer = [];
            this.keyup_buffer = [];
            element = element || document.body;
+           Private.cross_browser();
            Private.attach_event(element, 'keyup', (function(_this) {
                   return function(event) {
                       return _this.user_input(event,false);
