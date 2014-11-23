@@ -1,111 +1,146 @@
 (function () {
   var KEYS = {
-      DESK_MENU : 0,  // Detected on desktop
-      BACKSPACE : 8, 
-      TAB       : 9,
-      CLEAR     : 12, // Mac keyboard
-      DN_LOCK   : 12,
-      ENTER     : 13,
-      SHIFT     : 16,
-      CTRL      : 17,
-      ALT       : 18,
-      CAPS      : 20,
-      ESC       : 27,
-      SPACE     : 32,
-      PAGE_UP   : 33,
-      PAGE_DOWN : 34,
-      END       : 35,
-      HOME      : 36,
+      // "DESK_MENU" : 0,  // Detected on desktop
+      "BACKSPACE" : 8, 
+      "TAB"       : 9,
+      "CLEAR"     : 12, // Mac keyboard
+      // "DN_LOCK"   : 12,
+      "ENTER"     : 13,
+      "SHIFT"     : 16,
+      "CTRL"      : 17,
+      "ALT"       : 18,
+      "CAPS"      : 20,
+      "ESC"       : 27,
+      "SPACE"     : 32,
+      "PAGE_UP"   : 33,
+      "PAGE_DOWN" : 34,
+      "END"       : 35,
+      "HOME"      : 36,
       //////////////////////
-      LEFT   : 37,
-      UP     : 38,
-      RIGHT  : 39,
-      DOWN   : 40,
-      INSERT : 45,
-      DELETE : 46,
+      "LEFT"    : 37,
+      "UP"      : 38,
+      "RIGHT"   : 39,
+      "DOWN"    : 40,
+      "INSERT"  : 45,
+      "DELETE"  : 46,
       //////////////////////
-      ZERO  : 48,
-      ONE   : 49,
-      TWO   : 50,
-      THREE : 51,
-      FOUR  : 52,
-      FIVE  : 53,
-      SIX   : 54,
-      SEVEN : 55,
-      EIGHT : 56,
-      NINE  : 57,
+      "0"       : 48,
+      "1"       : 49,
+      "2"       : 50,
+      "3"       : 51,
+      "4"       : 52,
+      "5"       : 53,
+      "6"       : 54,
+      "7"       : 55,
+      "8"       : 56,
+      "9"       : 57,
       //////////////////////
-      A : 65, 
-      B : 66, 
-      C : 67,
-      D : 68, 
-      E : 69, 
-      F : 70,
-      G : 71, 
-      H : 72, 
-      I : 73,
-      J : 74, 
-      K : 75, 
-      L : 76,
-      M : 77, 
-      N : 78, 
-      O : 79,
-      P : 80, 
-      Q : 81, 
-      R : 82,
-      S : 83, 
-      T : 84, 
-      U : 85,
-      V : 86, 
-      W : 87, 
-      X : 88,
-      Y : 89, 
-      Z : 90,
+      "A"       : 65, 
+      "B"       : 66, 
+      "C"       : 67,
+      "D"       : 68, 
+      "E"       : 69, 
+      "F"       : 70,
+      "G"       : 71, 
+      "H"       : 72, 
+      "I"       : 73,
+      "J"       : 74, 
+      "K"       : 75, 
+      "L"       : 76,
+      "M"       : 77, 
+      "N"       : 78, 
+      "O"       : 79,
+      "P"       : 80, 
+      "Q"       : 81, 
+      "R"       : 82,
+      "S"       : 83, 
+      "T"       : 84, 
+      "U"       : 85,
+      "V"       : 86, 
+      "W"       : 87, 
+      "X"       : 88,
+      "Y"       : 89, 
+      "Z"       : 90,
 
-      L_START : 91, // usual keyboard
-      R_START : 92,
-      L_CMD   : 91, // Mac's keyboard
-      R_CMD   : 93,
-      LAP_MENU: 93, // Detected on laptop keyboard
-      N_ZERO  : 96,
-      N_1     : 97,
-      N_2     : 98,
-      N_3     : 99,
-      N_4     : 100,
-      N_5     : 101,
-      N_6     : 102,
-      N_7     : 103,
-      N_8     : 104,
-      N_9     : 105,
-      N_MULTI : 106,
-      N_PLUS  : 107,
-      N_MINUS : 109,
-      N_PERIOD: 110,
-      N_DEVIDE: 111,
-      F1      : 112,
-      F2      : 113,
-      F3      : 114,
-      F4      : 115,
-      F5      : 116,
-      F6      : 117,
-      F7      : 118,
-      F9      : 120,
-      F10     : 121,
-      LN_LOCK  : 144,
+      "L_START" : 91, // usual keyboard
+      "R_START" : 92,
+      "L_CMD"   : 91, // Mac's keyboard
+      "R_CMD"   : 93,
+      "MENU"    : 93, // Detected on laptop keyboard
+      "N0"      : 96,
+      "N1"      : 97,
+      "N2"      : 98,
+      "N3"      : 99,
+      "N4"      : 100,
+      "N5"      : 101,
+      "N6"      : 102,
+      "N7"      : 103,
+      "N8"      : 104,
+      "N9"      : 105,
+      "N*"      : 106,
+      "N+"      : 107,
+      "N-"      : 109,
+      "N."      : 110,
+      "N/"      : 111,
+      "F1"      : 112,
+      "F2"      : 113,
+      "F3"      : 114,
+      "F4"      : 115,
+      "F5"      : 116,
+      "F6"      : 117,
+      "F7"      : 118,
+      "F9"      : 120,
+      "F10"     : 121,
+      "NUM_LOCK": 144,
 
-      SEMICOLON : 186,  // ;
-      EQUAL     : 187,  // =
-      COMMA     : 188,  // ,
-      MINUS     : 189,  // -
-      PERIOD    : 190,  // .
-      SLASH     : 191,  // /
-      BACKTICK  : 192,  // `
-      L_BRACKET : 219,  // [
-      BACKSLASH : 220,  // \
-      R_BRACKT  : 221,  // ]
-      S_QUOTE   : 222  // '
+      ";"       : 186,  // ;
+      "="       : 187,  // =
+      ","       : 188,  // ,
+      "-"       : 189,  // -
+      "."       : 190,  // .
+      "/"       : 191,  // /
+      "`"       : 192,  // `
+      "["       : 219,  // [
+      "\\"      : 220,  // \
+      "]"       : 221,  // ]
+      "'"       : 222  // '
 	  };
-    
+
+    var OPERA_11 = {
+      ";"       : 59,
+      "="       : 61,
+      "-"       : 109,
+      "L_START" : 219,
+      "N0"      : 48,
+      "N1"      : 49,
+      "N2"      : 50,
+      "N3"      : 51,
+      "N4"      : 52,
+      "N5"      : 53,
+      "N6"      : 54,
+      "N7"      : 55,
+      "N8"      : 56,
+      "N9"      : 57,
+      "N*"      : 42,
+      "N+"      : 43,
+      "N-"      : 45,
+      "N."      : 78,
+      "N/"      : 47
+    }
+
+    var FIREFOX_14 = {
+      ";"       : 59,
+      "="       : 107,
+      "-"       : 109
+    }
+
+    var FIREFOX_15 = {
+      ";"       : 59,
+      "="       : 61,
+      "-"       : 173
+    }
+
+
     var State_Machine = {
 
       add: function(machine,keys_array) {  // id array
@@ -164,6 +199,77 @@
                          }
                       }
                       return true;
+                   },
+
+      cross_browser: function() {
+                      var browser = this.get_user_browser();
+                      // If the browser is Opera and version is under 12
+                      if(browser.indexOf("Opera") != -1 && browser.substring(6, browser.length) < 12) {
+                          this.extend(KEY, OPERA_11);
+                          return;
+                      }
+                      // If the browser is Firefox and version is under 15
+                      if(browser.indexOf("Firefox") != -1 && browser.substring(8, browser.length) < 15) {
+                          this.extend(KEY, FIREFOX_14);
+                          return;
+                      }
+                      // If the browser is Firefox and version is above 15(including it)
+                      if(browser.indexOf("Firefox") != -1 && browser.substring(8, browser.length) >= 15) {
+                          this.extend(KEY, FIREFOX_15);
+                          return;
+                      }
+                    },
+
+
+      // This is an awesome solution to get browser name and version from Stackflow
+      // http://stackoverflow.com/questions/5916900/detect-version-of-browser
+      get_user_browser: function() {
+                       var user_agent = navigator.userAgent;
+                       var temp, result;
+                       result = user_agent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+                       // IE would give ["Trident/7", "Trident", "7"]
+                       // Older versions of Opera would give something like ["Opera/9", "Opera", "9"]
+                       // Newer version of Opera would give something like ["Chrome/39", "Chrome", "39"]
+                       // Chrome would also give something like ["Chrome/39", "Chrome", "39"]
+                       // Firefox would give something like [ "Firefox/33", "Firefox", "33" ]
+                       // Safari would give something like ["Safari/600", "Safari", "600"]
+
+                       // If user agent is IE
+                       if(/trident/i.test(result[1])){
+                           // Get the version of IE
+
+                           // userAgent in IE would be something like 
+                           // ( "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; SLCC2;
+                           //   .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729;
+                           //   Media Center PC 6.0; .NET4.0C; .NET4.0E; InfoPath.3; rv:11.0) like Gecko" )
+                           temp = /\brv[ :]+(\d+)/g.exec(ua) || [];
+                           return 'IE '+(temp[1] || '');
+                       }
+                       // If user agent is modern version of Opera
+
+                       // userAgent in modern Opera, probably after Opera 18.0(including it)
+                       // userAgent in newer version of Opera would be something like 
+                       // "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) 
+                       // Chrome/39.0.2171.62 Safari/537.36 OPR/26.0.1656.20 (Edition beta)"
+
+                       // You can tell it will return "Chrome", so we need to check if OPR exists
+                       if(result[1]=== 'Chrome'){
+                           temp = user_agent.match(/\bOPR\/(\d+)/)
+                           if(temp != null) return 'Opera '+ temp[1];
+                       }
+
+                       result = result[2] ? [result[1], result[2]]: [navigator.appName, navigator.appVersion, '-?'];
+                       // In Safari, user_agent would be something like
+                       // "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25"
+                       // We need to check if "Version" exists in the string
+                       if((temp = user_agent.match(/version\/(\d+)/i))!= null) result.splice(1, 1, temp[1]);
+                       return result.join(' ');
+                    },
+
+      extend:      function(obj1, obj2) {
+                      for(var i in obj2) {
+                          obj1[i] = obj2[i];
+                       }
                    },
 
       same_array:  function(first, second) {
@@ -581,67 +687,65 @@
                                  return Private.count(keys, this);
                               },
             get_keypackage :  function() {
-                                 /*
-                                     Object {
-                                      "21": {
-                                            callback: function(){},
-                                            keep_fire: false,
-                                            key: ["A","S"],
-                                            key_origin: "a s",
-                                            order: true;
-                                            time: undefined,
-                                       }
-                                     }
-                                 */
+                                 //
+                                 //    Object {
+                                 //     "21": {
+                                 //           callback: function(){},
+                                 //           keep_fire: false,
+                                 //           key: ["A","S"],
+                                 //           key_origin: "a s",
+                                 //           order: true;
+                                 //           time: undefined,
+                                 //      }
+                                 //    }
                                  return this.keys_package;
                               },
 
             get_sizetable  :  function() {
-                                 /*
-                                      Object { 2: ["21"], }
-                                 */
+                                 //
+                                 //     Object { 2: ["21"], }
+                                 //
                                  return this.size_table;
                               },
 
             get_activekeys :  function() {
-                                 /*
-                                      Object {65: 2, 83: 3}
-                                 */
+                                 //
+                                 //     Object {65: 2, 83: 3}
+                                 //
                                  return this.active_keys;
                               },
 
             get_id:           function() {
-                                 /*
-                                      Object { 123 : ["21","23"],}
-                                 */
+                                 //
+                                 //     Object { 123 : ["21","23"],}
+                                 //
                                  return this.first_to_id;
                               },
 
             get_machine: function() {
-                                 /*
-                                      Object {
-                                         65: {
-                                            66: 1,
-                                            67: 1,
-                                            83: 2, 
-                                         }
-                                         'start': {
-                                            65: 1,
-                                         }
-                                      }
-                                 */
+                                 //
+                                 //     Object {
+                                 //        65: {
+                                 //           66: 1,
+                                 //           67: 1,
+                                 //           83: 2, 
+                                 //        }
+                                 //        'start': {
+                                 //           65: 1,
+                                 //        }
+                                 //     }
+                                 //
                                  return this.machine;
                               },
             get_buffer:  function() {
-                                  /* 
-                                      Object {
-                                         current: 123,
-                                         id: "21",
-                                         pass: 4,
-                                         v: true,
-                                      }
-
-                                 */
+                                  // 
+                                  //    Object {
+                                  //       current: 123,
+                                  //       id: "21",
+                                  //       pass: 4,
+                                  //       v: true,
+                                  //    }
+                                  // 
                                  return this.keyup_buffer;
             }
        });
@@ -658,3 +762,5 @@
     window.Input = Input;
   }
 })()
+
+
