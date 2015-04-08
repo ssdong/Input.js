@@ -144,7 +144,7 @@
     var State_Machine = {
 
         add: function(machine, keys_array) { // id array
-            if (machine['start'] == void 0) {
+            if (machine['start'] == undefined) {
                 machine['start'] = {};
             }
             if (machine['start'][KEYS[keys_array[0]]]) {
@@ -157,7 +157,7 @@
             for (var i = 0; i < len - 1; i++) {
                 key = KEYS[keys_array[i]];
                 value = KEYS[keys_array[i + 1]];
-                if (machine[key] == void 0) {
+                if (machine[key] == undefined) {
                     machine[key] = {};
                 }
                 if (machine[key][value]) {
@@ -184,7 +184,7 @@
         },
 
         is_undefined: function(obj) {
-            return obj === void 0;
+            return obj === undefined;
         },
 
         is_empty: function(obj) { // Test if something is {} or [] not
@@ -321,7 +321,7 @@
         register_keys: function(keys_array, _this) {
             var len = keys_array.length;
             for (var i = 0; i < len; i++) {
-                if (KEYS[keys_array[i]] === void 0) {
+                if (KEYS[keys_array[i]] === undefined) {
                     throw "Not support " + keys_array[i];
                 }
                 if (_this.active_keys[KEYS[keys_array[i]]]) {
@@ -390,7 +390,7 @@
 
         add_to_first: function(first, id, _this) {
             var first_to_id = _this.first_to_id;
-            if (first_to_id[first] == void 0) {
+            if (first_to_id[first] == undefined) {
                 first_to_id[first] = [];
             }
             first_to_id[first].push(id);
@@ -615,7 +615,7 @@
             var size_table = _this.size_table;
             var keys_array = this.string_to_array(keys);
             var id_array = size_table[keys_array.length];
-            if (this.is_empty(keys_package) || id_array == void 0) {
+            if (this.is_empty(keys_package) || id_array == undefined) {
                 return count;
             }
             var len = id_array.length;
