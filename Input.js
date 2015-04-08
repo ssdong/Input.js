@@ -1,4 +1,4 @@
-(function() {
+(function(window, undefined) {
     var KEYS = {
         // "DESK_MENU" : 0,  // Detected on desktop
         "BACKSPACE": 8,
@@ -361,7 +361,7 @@
             if (s_table[size]) {
                 var len = s_table[size].length;
                 var last = s_table[size][len - 1];
-                id = size.toString() + (parseInt(last.substr(1, last.length - 1)) + 1);
+                id = size.toString() + (parseInt(last.substr(1, last.length - 1), 10) + 1);
                 s_table[size].push(id);
             } else {
                 id = size.toString() + 1;
@@ -762,4 +762,4 @@
     } else {
         window.Input = Input;
     }
-})()
+})(window)
