@@ -2,7 +2,7 @@ Input.js
 ========
 
 A JavaScript library focused on sequential user inputs.
-Please visit http://ssdong.github.io/project/input.html
+Please visit https://ssdong.github.io/input-js-demo
 
 **History**
 ---------------
